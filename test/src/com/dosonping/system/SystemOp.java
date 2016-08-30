@@ -10,5 +10,7 @@ public class SystemOp {
 			System.out.println(entry.getKey() + "::" + entry.getValue());
 		}
 		Properties properties = System.getProperties();
+		properties.keys();
+		properties.getProperty("");
 	}
 }
