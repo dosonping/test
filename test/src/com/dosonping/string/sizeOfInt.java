@@ -2,6 +2,7 @@ package com.dosonping.string;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Date;
 
 public class sizeOfInt {
 	public static void main(String[] args) {
@@ -13,11 +14,11 @@ public class sizeOfInt {
 		nf.setGroupingUsed(false);
 		String format = nf.format(i);
 		System.out.println(format);
-		
-		
 		DecimalFormat df = new DecimalFormat("000");
 		String format2 = df.format(i);
 		
 		System.out.println(format2);
+		System.out.println("testsizeOfInt");
+		System.out.println(new Date());
 	}
 }
