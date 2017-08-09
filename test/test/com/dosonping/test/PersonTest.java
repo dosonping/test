@@ -24,8 +24,7 @@ public class PersonTest {
 	@Test(timeout=200)
 	public void testWalk(){
 		person.walk();
-		person.walk();
-		person.walk();
+//		person.walk();
 		//Assert.assertEquals("walk...",person.walk(), person);
 	}
 	@Test(expected=IllegalArgumentException.class)

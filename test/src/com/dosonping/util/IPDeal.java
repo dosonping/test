@@ -21,8 +21,8 @@ public class IPDeal {
 		String sql;
 		String strRtn = null;
 		try{
-			MyJdbc myjdbc = new MyJdbc();
-			conn = myjdbc.getConn();
+//			MyJdbc myjdbc = new MyJdbc();
+//			conn = myjdbc.getConn();
 			sql = "select * from fullip where startip<='" + strip + "' and endip>='" + strip + "'";
 			pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();

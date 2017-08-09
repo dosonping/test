@@ -19,15 +19,13 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 public class UploadHelper {
 	
 	public final static String separator = "/";
 	public final static String split = "_";
 	
-	protected final Log log = LogFactory.getLog(getClass());
+//	protected final Log log = LogFactory.getLog(getClass());
 
 	class FilenameFilterImpl implements FilenameFilter 
 	{
@@ -98,12 +96,13 @@ public class UploadHelper {
    	 */
 	public void dumpAsset(File file, String fileName, String filePath) throws Exception
 	{
+		@SuppressWarnings("unused")
 		long timer = System.currentTimeMillis();
 		
 		File outputFile = new File(filePath + separator + fileName);
 		if(outputFile.exists())
 		{
-			log.info("The file allready exists so we don't need to dump it again..");
+//			log.info("The file allready exists so we don't need to dump it again..");
 			return;
 		}
 		
@@ -122,7 +121,7 @@ public class UploadHelper {
         bis.close();
 		fis.close();
 		bos.close();
-		log.info("Time for dumping file " + fileName + ":" + (System.currentTimeMillis() - timer));
+//		log.info("Time for dumping file " + fileName + ":" + (System.currentTimeMillis() - timer));
 	}
 
 	/**
@@ -134,21 +133,22 @@ public class UploadHelper {
    	
 	public void dumpAssetThumbnail(File file, String fileName, String thumbnailFile, String filePath, int width, int height, int quality) throws Exception
 	{
+		@SuppressWarnings("unused")
 		long timer = System.currentTimeMillis();
-		log.info("fileName:" + fileName);
-		log.info("thumbnailFile:" + thumbnailFile);
+//		log.info("fileName:" + fileName);
+//		log.info("thumbnailFile:" + thumbnailFile);
 		
 		File outputFile = new File(filePath + separator + thumbnailFile);
 		if(outputFile.exists())
 		{
-			log.info("The file allready exists so we don't need to dump it again..");
+//			log.info("The file allready exists so we don't need to dump it again..");
 			return;
 		}
 		
 		ThumbnailGenerator tg = new ThumbnailGenerator();
 		tg.transform(filePath + separator + fileName, filePath + separator + thumbnailFile, width, height, quality);
 		
-		log.info("Time for dumping file " + fileName + ":" + (System.currentTimeMillis() - timer));
+//		log.info("Time for dumping file " + fileName + ":" + (System.currentTimeMillis() - timer));
 	}
 	
 	/**
@@ -163,13 +163,13 @@ public class UploadHelper {
 			for(int i=0; i<files.length; i++)
 			{
 				File file = files[i];
-				log.info("Deleting file " + file.getPath());
+//				log.info("Deleting file " + file.getPath());
 				file.delete();
 			}
 		}
 		catch(Exception e)
 		{
-			log.error("Could not delete the assets for the digitalAsset " + filePrefix + ":" + e.getMessage(), e);
+//			log.error("Could not delete the assets for the digitalAsset " + filePrefix + ":" + e.getMessage(), e);
 		}
 	}
 
