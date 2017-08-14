@@ -16,6 +16,7 @@ public class timeNoDate {
 			System.out.println("date: " + date);
 			String dateStr = sdf.format(date);
 			System.out.println("dateStr: " + date);
+			System.out.println(new Date());
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
