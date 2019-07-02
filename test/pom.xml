@@ -67,5 +67,10 @@
   		<artifactId>javax.servlet</artifactId>
   		<version>3.0.0.v201103241009</version>
 	</dependency>
+	<dependency>
+  <groupId>plf</groupId>
+  <artifactId>plf-utils</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+</dependency>
   </dependencies>
 </project>
